@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">github.io</domain>
+
+        <pin-set>
+            <!--Note: These values may change over time, so be sure to use the values that you obtained from the
+             ssllabs lookup   -->
+            <pin digest="SHA-256">tlWQhja7+4LV96qCw71ZE325VzDFNgQuI0N2soN4JSo=</pin>
+            <pin digest="SHA-256">k2v657xBsOVe1PQRwOsHsw3bsGT2VzIqz5K+59sNQws=</pin>
+        </pin-set>
+
+        <!--This tells TrustKit to enable certificate pinning using the existing pins we added above-->
+        <trustkit-config enforcePinning="true" />
+    </domain-config>
+
+</network-security-config>
