@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
+    <!--block any network requests that do not use HTTPS-->
     <domain-config cleartextTrafficPermitted="false">
+        <!--require HTTPS for subdomains like collinstuart.github.io-->
         <domain includeSubdomains="true">github.io</domain>
 
         <pin-set>
-            <!--Note: These values may change over time, so be sure to use the values that you obtained from the
+            <!--
+            hashes of the public keys for main and backup certificate for one of the servers
+            Note: These values may change over time, so be sure to use the values that you obtained from the
              ssllabs lookup   -->
             <pin digest="SHA-256">tlWQhja7+4LV96qCw71ZE325VzDFNgQuI0N2soN4JSo=</pin>
             <pin digest="SHA-256">k2v657xBsOVe1PQRwOsHsw3bsGT2VzIqz5K+59sNQws=</pin>
